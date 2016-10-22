@@ -25,13 +25,13 @@ public class GodSuspend {
 		@Override
 		public void run() {
 			while (true) {
-				synchronized (this) {
-					while (suspendme) {
-						try {
+				while (suspendme) {
+					try {
+						synchronized (this) {
 							wait();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
 						}
+					} catch (InterruptedException e) {
+						e.printStackTrace();
 					}
 				}
 
