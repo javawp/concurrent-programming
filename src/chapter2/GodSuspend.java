@@ -65,11 +65,9 @@ public class GodSuspend {
 		ReadObjectThread t2 = new ReadObjectThread("ReadObjectThread");
 		t1.start();
 		t2.start();
-		Thread.sleep(1000);
-		t1.suspendMe();
-		System.out.println("suspendme t1 2 sec");
-		Thread.sleep(2000);
-		System.out.println("resume t1");
-		t1.resumeMe();
+		Thread.sleep(1000); // 保证线程t1进入方法
+		t1.suspendMe(); // 线程等待
+		Thread.sleep(2000); // 当前实例等待2秒, 再去唤醒
+		t1.resumeMe(); // 唤醒当前实例, 重新执行
 	}
 }
