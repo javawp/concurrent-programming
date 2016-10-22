@@ -4,7 +4,7 @@ public class NoVisibility {
 
 	private static volatile boolean ready;
 
-	private volatile static int number;
+	private static volatile int number;
 
 	private static class ReaderThread extends Thread {
 
@@ -19,7 +19,7 @@ public class NoVisibility {
 
 	public static void main(String[] args) throws InterruptedException {
 		new ReaderThread().start();
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 		number = 42;
 		ready = true;
 		Thread.sleep(5000);
