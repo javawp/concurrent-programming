@@ -8,6 +8,10 @@ public class IntLock implements Runnable {
 	public static ReentrantLock lock2 = new ReentrantLock();
 	int lock;
 
+	/**
+	 * 控制加锁顺序, 方便构成死锁
+	 * @param lock
+	 */
 	public IntLock(int lock) {
 		this.lock = lock;
 	}
