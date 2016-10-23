@@ -8,6 +8,10 @@ public class TryLock implements Runnable {
 	public static ReentrantLock lock2 = new ReentrantLock();
 	int lock;
 
+	/**
+	 * 控制加锁顺序
+	 * @param lock
+	 */
 	public TryLock(int lock) {
 		this.lock = lock;
 	}
