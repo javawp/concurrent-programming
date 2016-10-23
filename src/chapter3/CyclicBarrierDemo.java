@@ -20,10 +20,10 @@ public class CyclicBarrierDemo {
 		public void run() {
 			try {
 				// 等待所有士兵到齐
-				cyclic.await();
+				cyclic.await(); // 开始计数
 				doWork();
 				// 等待所有士兵完成工作
-				cyclic.await();
+				cyclic.await(); // 开始计数
 			} catch (InterruptedException e) {
 				// 线程中断异常
 				e.printStackTrace();
